@@ -4,9 +4,9 @@ Este proyecto tiene como objetivo analizar y predecir si un texto corto es humor
 
 ---
 
-## 📦 Dataset
+## Dataset
 
-Se utilizó el dataset [200K Short Texts for Humor Detection](https://www.kaggle.com/datasets/deepcontractor/200k-short-texts-for-humor-detection) disponible en Kaggle. Contiene más de 200,000 textos cortos en inglés etiquetados como `humor=True` o `humor=False`.
+Se utilizó el dataset [200K Short Texts for Humor Detection](https://www.kaggle.com/datasets/deepcontractor/200k-short-texts-for-humor-detection) disponible en Kaggle. Contiene 200 000 textos cortos en inglés etiquetados como `humor=True` o `humor=False`.
 
 - **Variables clave:**
   - `text`: contenido del texto.
@@ -14,7 +14,7 @@ Se utilizó el dataset [200K Short Texts for Humor Detection](https://www.kaggle
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
 1. Realizar un análisis exploratorio del lenguaje humorístico.
 2. Preprocesar los textos y aplicar técnicas de vectorización (TF-IDF).
@@ -27,16 +27,15 @@ Se utilizó el dataset [200K Short Texts for Humor Detection](https://www.kaggle
 
 ---
 
-## 🧪 Preprocesamiento y vectorización
+## Preprocesamiento y vectorización
 
 - Se eliminaron caracteres no alfabéticos y se normalizó el texto (minúsculas, sin acentos).
-- Se eliminaron stopwords en inglés.
 - Se eliminaron los números, por considerarse poco informativos para este caso.
-- Se aplicó `TfidfVectorizer` para convertir los textos en vectores numéricos. Se probó con distintos tamaños del vocabulario (`max_features=50`, `15000`, etc.).
+- Se aplicó `TfidfVectorizer` para convertir los textos en vectores numéricos. Se probó con distintos tamaños del vocabulario (`max_features=50`, `15000`, etc.). Se probó también eliminar los stopwords, y se optó por no hacerlo de acuerdo con la precisión observada.
 
 ---
 
-## 🤖 Modelos implementados
+## Modelos implementados
 
 ### 1. Regresión logística
 Modelo lineal que predice la probabilidad de que un texto sea humorístico a partir de los valores TF-IDF de sus palabras.
@@ -49,14 +48,14 @@ Modelo de conjunto basado en árboles de decisión. Fue probado con una versión
 
 ---
 
-## 📊 Evaluación y resultados
+## Evaluación y resultados
 
-Se usaron métricas estándar para evaluar el rendimiento:
+Se usaron métricas estándar para evaluar el rendimiento. Se presentan los resultados del modelo de regresión logística:
 
-- **Accuracy general** de los modelos: ~0.90
+- **Accuracy general** del modelo: ~0.94
 - **Precision y Recall**:
-  - Textos humorísticos: ~89-91%
-  - Textos no humorísticos: ~88-91%
+  - Textos humorísticos: ~94%
+  - Textos no humorísticos: ~95%
 - Las **curvas de aprendizaje** mostraron un buen comportamiento en todos los modelos, con mejoras consistentes a medida que aumentaba el tamaño del conjunto de entrenamiento.
 
 ---
@@ -65,30 +64,17 @@ Se usaron métricas estándar para evaluar el rendimiento:
 
 - El modelo de regresión logística ofreció el mejor rendimiento general, aunque Naive Bayes lo siguió muy de cerca.
 - Random Forest tuvo un rendimiento competitivo, pero fue computacionalmente más costoso.
-- El uso de preprocesamiento (eliminación de stopwords, números, etc.) ayudó a reducir el ruido y mejorar la generalización.
+- El uso de preprocesamiento ayudó a reducir el ruido y mejorar la generalización.
 - El humor parece tener una estructura lingüística recurrente, lo que facilitó su detección mediante modelos estadísticos clásicos.
 
 ---
 
-## 📂 Archivos incluidos
+## Archivos incluidos
 
+- `dataset.csv`: dataset original.
+- `dataset (b).csv`: dataset procesado con columnas añadidas.
 - `Análisis exploratorio profundo del humor textual.ipynb`: análisis exploratorio, frecuencias y visualización.
 - `Modelos estadísticos para predecir si un texto es humorístico.ipynb`: vectorización y clasificación.
-- `dataset (b).csv`: dataset procesado con columnas añadidas.
-
----
-
-## 🚀 Próximos pasos
-
-- Aplicar embeddings (Word2Vec, GloVe, BERT).
-- Implementar modelos de redes neuronales.
-- Ampliar el análisis al nivel de n-gramas o dependencias gramaticales.
-
----
-
-## ✍️ Autor
-
-Josué Nava — Estudiante de la Licenciatura en Estadística, Universidad Autónoma Chapingo
 
 ---
 
