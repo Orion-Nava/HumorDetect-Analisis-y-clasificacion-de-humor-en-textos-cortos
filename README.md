@@ -60,7 +60,7 @@ Se usaron métricas estándar para evaluar el rendimiento. Se presentan los resu
 
 ---
 
-## ✅ Conclusiones
+## Conclusiones
 
 - El modelo de regresión logística ofreció el mejor rendimiento general, aunque Naive Bayes lo siguió muy de cerca.
 - Random Forest tuvo un rendimiento competitivo, pero fue computacionalmente más costoso.
