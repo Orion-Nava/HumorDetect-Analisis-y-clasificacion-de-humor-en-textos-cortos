@@ -1,4 +1,4 @@
-# Clasificación de humor en textos cortos con modelos estadísticos
+# Clasificación de humor en textos cortos con modelos estadísticos de clasificación
 
 Este proyecto tiene como objetivo analizar y predecir si un texto corto es humorístico o no, utilizando técnicas de procesamiento de lenguaje natural (NLP) y modelos estadísticos clásicos de clasificación.
 
